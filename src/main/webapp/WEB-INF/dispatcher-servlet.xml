@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>		
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+
+<bean id="readProperties"
+	class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<!-- classpath: looks into the applications classpath -->
+		<!-- classpath: looks into the applications classpath -->
+		
+		<!-- For more info visit this http://www.codejava.net/frameworks/spring/reading-properties-files-in-spring-with-propertyplaceholderconfigurer-bean -->
+		
+		
+		<!--  <property name="location" value="classpath:WEB-INF/classes/eduworld.properties" />
+		 -->
+		
+	 <property name="location" value="classpath:eduworld.properties" />
+	
+	<!-- <property name="location" value="file:E:/eduworld.properties" /> -->
+
+</bean>
+ <context:component-scan base-package="com.eduworld.controllers,com.eduworld.authentication"/>
+ <mvc:annotation-driven/>
+ 	
+<mvc:interceptors >
+	<bean class="com.eduworld.interceptor.ApplicationInterceptor">
+		<property name="encryAndDecrypt" ref="cryptoSecu"></property>
+		<property name="securFormat" value="${com.eduworld.security.format}"></property>
+		<property name="splitter" value="${com.eduworld.security.splitter}"></property>
+	</bean>
+</mvc:interceptors> 
+ 
+ <bean id="cryptoSecu" class="com.eduworld.authentication.CryptoSecurityApp" abstract="false">
+ <constructor-arg name="uniCodeFormat" value="${com.eduworld.unicode.format}"></constructor-arg>
+  <constructor-arg name="encryptScheme" value="${com.eduworld.encrypt.scheme}"></constructor-arg>
+   <constructor-arg name="encryptKey" value="${com.eduworld.encrypt.key}"></constructor-arg>
+   <property name="securFormat" value="${com.eduworld.security.format}"></property>
+ <property name="SECUTY_SPLITTER" value="${com.eduworld.security.splitter}"></property>
+ </bean>
+ 
+ 
+ 
+</beans>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:security="http://www.springframework.org/schema/security"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-4.0.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+	<property name="driverClassName" value="${com.eduworld.driverclassname}"/>
+	<property name="url" value="${com.eduworld.url}"/>
+	<property name="username" value="${com.eduworld.username}"/>
+	<property name="password" value="${com.eduworld.password}"/>
+	<property name="maxIdle" value="${com.eduworld.maxidle}"/>
+	<property name="maxActive" value="${com.eduworld.maxactive}"/>
+	<property name="initialSize" value="${com.eduworld.intialsize}"/>
+</bean>
+
+<!-- 
+<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+	<property name="driverClassName" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
+	<property name="url" value="jdbc:sqlserver://localhost:1433;databaseName=PRACTICE"/>
+	<property name="username" value="sa"/>
+	<property name="password" value="passw0rd"/>
+	<property name="maxIdle" value="10"/>
+	<property name="maxActive" value="50"/>
+	<property name="initialSize" value="10"/>
+</bean>-->
+
+<bean id="sessionFactory"  class="com.eduworld.util.InternalLocalSessionFactoryBeanImpl">
+    <property name="dataSource"  ref="dataSource"/>
+    <property name="mappingResources">
+    <list>
+    	<value>Elephant.hbm.xml</value>
+    </list>
+    </property>
+    <!-- <property name="annotatedClasses">
+    <list>
+    	<value></value>
+    </list>
+    </property> -->
+    <property name="hibernateProperties">
+    	<props>
+    		<prop key="hibernate.dialect" >org.hibernate.dialect.SQLServerDialect</prop>
+    		<prop key="hibernate.show_sql">true</prop>
+    		<!-- <prop key="hbm2ddl.auto" >create</prop> -->
+    	</props>
+    </property>
+    </bean>
+    
+    <bean id="hibernateTemplate" class="org.springframework.orm.hibernate3.HibernateTemplate">
+<property name="sessionFactory" ref="sessionFactory"></property>
+</bean>	
+
+ <!-- <bean id="homeService" class="com.eduworld.services.external.impl.HomeServiceImpl">
+ <property name="homeCoreService" ref="homeCoreService"></property>
+</bean> -->
+ <!-- <bean id="homeCoreService" class="com.eduworld.services.internal.impl.HomeCoreServiceImpl">
+ 	
+ </bean>
+ 
+ <bean id="homeDao" class="com.eduworld.dao.HomeDaoImpl"/> -->
+ 	
+
+
+
+<bean id="readProperties"
+	class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<!-- classpath: looks into the applications classpath -->
+		<!-- classpath: looks into the applications classpath -->
+		
+		<!-- For more info visit this http://www.codejava.net/frameworks/spring/reading-properties-files-in-spring-with-propertyplaceholderconfigurer-bean -->
+		
+		
+		<!--  <property name="location" value="classpath:WEB-INF/classes/eduworld.properties" />
+		 -->
+		
+	 <property name="location" value="classpath:eduworld.properties" />
+	
+	<!-- <property name="location" value="file:E:/eduworld.properties" /> -->
+
+</bean>
+
+ <context:component-scan base-package="com.eduworld.controllers,com.eduworld.services.external.impl,com.eduworld.services.internal.impl,com.eduworld.dao,com.eduworld.interceptor,com.eduworld.authentication" /> 
+ 
+ <!-- <security:http entry-point-ref="customEntryPoint" use-expressions="true">
+	<security:custom-filter ref="authenticationFilter"  before="PRE_AUTH_FILTER"></security:custom-filter>
+	
+	<security:intercept-url pattern="/**"
+            access="hasAuthority('AUTH_USER')" />
+            
+            <security:logout delete-cookies="JSESSIONID"/>
+            <security:csrf disabled="true"/>
+            
+	</security:http>
+	<security:authentication-manager alias="authenticationManager">
+		<security:authentication-provider ref="customAuthenticationProvider"></security:authentication-provider>
+	</security:authentication-manager>
+	<bean id="customAuthenticationProvider" class="com.eduworld.authentication.AuthenticationProvider">
+		
+	</bean>
+	
+	
+	<bean id="customEntryPoint" class="com.eduworld.authentication.CustomEntryPoint">
+		
+	</bean>
+	
+	
+	
+	<bean id="authenticationFilter" class="org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter">
+		<property name="authenticationManager" ref="authenticationManager"></property>
+		<property name="postOnly" value="false"></property>
+		<property name="authenticationSuccessHandler" ref="customSucessHandler"></property>
+	</bean>
+	
+	<bean id="customSucessHandler" class="com.eduworld.authentication.CustomSucessHandler"/> -->
+	
+	
+<!-- <mvc:interceptors >
+<
+	<bean class="com.eduworld.interceptor.ApplicationInterceptor"></bean>
+
+</mvc:interceptors>  -->
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+</beans>

@@ -1,0 +1,255 @@
+
+<html>
+<head>
+<title>Home</title>
+<!--<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-state=1"/>-->
+<!--<link type="text/css" rel="stylesheet" href="C:/my gallery/programming file/css/bootstrap.css"/>
+<script src="C:/my gallery/programming file/js/jquery-3.2.1.min (1)"></script>
+<script src="C:/my gallery/programming file/js/bootstrap.js"></script>-->
+<style>
+*
+{
+margin:0px;
+padding:0px;
+}
+.tophead{
+background-color:#33c7ff;
+height:120px;
+width:100%;
+display-inline:block;
+}
+.tophead form input[type="button"]{
+background-color:violet;
+height:30px;
+width:70px;
+margin-top:20px;
+margin:20px;
+float:right;
+display:inline-block;
+border:0px;
+border-radius:25px;
+webkit-border-radius:25px;
+-o-border-radius:25px;
+-moz-border-radius:25px;
+font-weight:bolder;
+color:black;
+}
+.tophead h1{
+font-size:60px;
+color:#ff3346;
+font-weight:bolder;
+text-align:center;
+display:inline-block;		
+
+}
+.tophead form input:hover{
+color:white;
+background-color:green;
+cursor:pointer;
+}
+.header{
+background-color:#ff4633	;
+height:70px;
+width:100%;
+display:inline-block;
+
+}
+.header form{
+padding:30px;
+margin:0px;
+margin auto;
+border 0px solidgrey;
+display:inline-block;
+}
+.header form input[type="button"]{
+      width:180px;
+      height:30px;
+      color:yellow;
+         margin-top:0px;
+      background-color:brown;
+      font-weight:bolder;
+      font-size:20px;
+   }
+.header form input:hover
+{
+background-color:white;
+color:black;
+}
+
+.slideshows{
+width:900px;
+overflow:hidden;
+}
+.images
+{
+position:relative;
+width:4500px;
+animation-name:slideview;
+animation-duration:25s;
+animation-iteration-count:infinite;
+}
+.images img{
+width:900px;
+height:400px;
+float:left;
+}
+@keyframes slideview{
+0%{
+left:0px;
+}
+16%
+{
+left:0px;
+}
+20%{
+left:-900px
+}
+36%
+{
+left:-900px;
+}
+40%
+{
+left:-1800px;
+}
+56%{
+left:-1800px;
+}
+60%
+{
+left:-2700px;
+}
+76%{
+left:-2700px;
+}
+80%{
+left:-3600px
+}
+96%{
+left:-3600px;
+}
+100%{
+left:-4500px;
+}
+}
+.descrip{
+width:900px;
+margin:auto;	
+height:500px;
+background-color:lightgrey;
+
+}
+.flowers{
+width:120px;
+height:500px;
+margin-left:15px;
+display:inline-block;
+}
+
+.footer{
+height:100px;
+width:100%;
+background-color:brown;
+}
+.footer p{
+color:white;
+display:inline-block;
+}
+.paragraph p{
+color:green;
+font-size:20px;
+text-align:justify;
+}
+.paragraph{
+width:680px;
+height:250px;
+margin-top:10px;
+margin-left:20px;
+display:inline-block;
+}
+.background{
+background-color:lightgreen;
+}
+</style>
+<script src="..\js\index.js" type="text/javascript">
+      function navRegPage() {
+      var path = window.location.pathname.match("resources");
+      if(path == null){
+            window.location="resources/html/regpage.html";
+      }
+      else {
+            var doc = document.createElement('script')
+    var stIndx = window.location.pathname.match("resources").index-1;
+    var endIndx = window.location.pathname.match("html").index + "html".length;
+    window.location=window.location.pathname.substring(0,endIndx)+"/regpage.html";
+      }
+    
+}
+
+
+
+</script>
+<script src="..\data\jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+      $(document).ready(function () {
+            document.write("Hello World!");
+      });
+</script>
+
+</head>
+<body>
+<div>
+<div class="tophead">
+<a href="loginpage.html">loginpage</a>
+<form method="get" action="loginpage.html">
+<input type="button" value="Login">
+<input type="button" onclick = "navRegPage();" value="Register">
+</form>
+<!--<img src="C:\Users\abdul rasheed\Downloads\Logomakr_2qF0vc.png"width="80px" height="80px" align="left" style=margin-top:20px; margin:10px;/>-->
+<h1>BEST Function Hall</h1>
+</div>
+<center>
+<div class="header">
+<form>
+<input type="button" value="Home">
+<input type="button" value="Functionhalls">
+<input type="button" value="Bestfunctionhalls">
+<input type="button" value="About us"/>
+</form>
+</div>
+<div class="background">
+<div class="slideshows">
+<div class="images">
+<!--<img src="C:\my gallery\function hall\andreas-ronningen-29698.jpg"/>
+<img src="C:\my gallery\function hall\anne-edgar-119384.jpg	"/>
+<img src="C:\my gallery\function hall\tom-pumford-225685.jpg"/>
+<img src="C:\my gallery\function hall\ben-rosett-10609.jpg"/>
+<img src="C:\my gallery\function hall\ben-white-131955.jpg"/>-->
+</div>
+</div>
+<div class="descrip">
+<div class="flowers">
+<!--<img src="C:\my gallery\function hall\Logomakr_06Z4eH.png"style=margin-top:30px;width:120px;height:100px;/>
+<img src="C:\my gallery\function hall\Logomakr_4SZlFD.png"style=margin-top:30px;width:120px;height:100px;/>
+<img src="C:\my gallery\function hall\Logomakr_4qlqpM.png"style=margin-top:30px;width:120px;height:100px;/>-->
+
+</div>
+<div class="paragraph">
+<p>You can get BestFunctionHalls in India now through "BestFunctionHall.com". make your mariage with pleasure by good functionhalls.choose a new function hall and get it in to a new life. The life partners will stay forever in their own house let them begin with the new joy that they can wish</p>
+<p>You can get BestFunctionHalls in India now through "BestFunctionHall.com". make your mariage with pleasure by good functionhalls.choose a new function hall and get it in to a new life. The life partners will stay forever in their own house let them begin with the new joy that they can wish</p>
+</div>
+</div>
+</div>
+
+<div class="footer">
+<p>e-mail id:abdulrasheed.basha@gmail.com</p>
+<div>
+<p >
+mobile number:8885374540</p>
+</div>
+</div>
+
+
+</body>
+</html>
