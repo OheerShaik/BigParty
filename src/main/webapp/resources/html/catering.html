@@ -46,9 +46,9 @@
 		</div>
 			<div class="row">	
 			<div class="buttons">
-<button type="button" class="impBtn"  id="homeBtn">Home</button>
-<button type="button" class="impBtn" id="funcBtn">Dining Hall</button>
-<button type="button" class="impBtn" id="catBtn">Catering</button>
+<a href="frontpage.html"><button type="button" class="impBtn"  id="homeBtn">Home</button></a>
+<a href="dininghall.html"><button type="button" class="impBtn" id="funcBtn">Dining Hall</button></a>
+<a href="catering.html"><button type="button" class="impBtn" id="catBtn">Catering</button></a>
 <button type="button" class="impBtn" id="decBtn">Decoration</button>
 <button type="button" class="impBtn" id="giftBtn">Gifts</button>
 </div>
@@ -60,17 +60,38 @@
 							<h1>CATERING</h1>
 							<P>Catering is one the most importanyt aspect in our website which shows good and better dining halls i make easy to our customers they can select and book dining halls from this option </P>
 							
-							<div class="buttons">
-<button type="button" class="impBtn"  id="homeBtn">Home</button><br>
-<button type="button" class="impBtn" id="funcBtn">Dining Hall</button><br>
-<button type="button" class="impBtn" id="catBtn">Catering</button><br>
-<button type="button" class="impBtn" id="decBtn">Decoration</button><br>
-<button type="button" class="impBtn" id="giftBtn">Gifts</button>
+												Catering type<br>
+					<br>
+		<select class="form-control" id="selectCatering">
+<option>---Select---</option>
+<option>VEG</option>
+<option>NON-VEG</option>
+		</select><br>
+							
+								Select Varieties<br>
+					<br>
+		<select class="form-control" id="selectItem">
+<option>---Select---</option>
+<option>32 varieties</option>
+<option>16 varieties</option>
+<option>8 varieties</option><br>
+<span>view items</span>
+</select><br>
+<label>Date of Catering</label><br>
+<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+<input id="id1" name="fdate" type="date" required class="form-control" >
 </div><br>
-			
+<br>
+<br>
+<label>Location</label><br>
+<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+<input id="id1" name="flocation" type="text" required class="form-control" >
+</div><br>
+<br>
+<br>
 					
 <button input type="submit" class="btn btn-md" id="sBtn">Submit</button>
-<button input type="submit"class="btn btn-md" id="sBtn">Back</button>
+<button input type="submit"class="btn btn-md" id="sBtn">Reset</button>
 
 </div>
 		</div>
